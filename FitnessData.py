@@ -64,7 +64,7 @@ class FitnessData(torch.utils.data.Dataset):
             if frames is not None:  # Successfully read
                 if self.transform is not None:
                     frames = [self.transform(frame) for frame in frames]
-                return torch.stack(frames), label
+                return torch.stack(frames).permute(1,0,2,3), label
             
             idx = np.random.randint(0, len(self))
         
