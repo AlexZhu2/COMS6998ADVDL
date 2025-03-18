@@ -5,8 +5,12 @@ import torchvision.transforms as transforms
 import numpy as np
 
 class FitnessData(torch.utils.data.Dataset):
-    def __init__(self, root_dir, transform=None, frames_per_clip=16):
+    def __init__(self, root_dir, train=True, transform=None, frames_per_clip=16):
         self.root_dir = root_dir
+        if train:
+            self.root_dir = self.root_dir + "-train"
+        else:
+            self.root_dir = self.root_dir + "-val"
         if transform is None:
             self.transform = transforms.Compose([
                 transforms.ToPILImage(),
@@ -18,12 +22,12 @@ class FitnessData(torch.utils.data.Dataset):
         else:
             self.transform = transform
         self.frames_per_clip = frames_per_clip
-        self.classes = [cls for cls in os.listdir(root_dir) if not cls.startswith(".")]
+        self.classes = sorted([cls for cls in os.listdir(self.root_dir) if not cls.startswith(".")])
         self.class_to_idx = {cls: i for i, cls in enumerate(self.classes)}
         self.idx_to_class = {i: cls for cls, i in self.class_to_idx.items()}
         self.video_files = []
         for cls in self.classes:
-            cls_path = os.path.join(root_dir, cls)
+            cls_path = os.path.join(self.root_dir, cls)
             if os.path.isdir(cls_path):
                 for file in os.listdir(cls_path):
                     if file.endswith((".mp4", ".avi", ".mov")):
@@ -69,4 +73,3 @@ class FitnessData(torch.utils.data.Dataset):
             idx = np.random.randint(0, len(self))
         
         raise RuntimeError(f"Failed to load video after {attempts} attempts: {video_path}")
-
