@@ -8,12 +8,10 @@ __pycache__
 *.jpeg
 *.gif
 *.bmp
-r2plus1d_test.py
 workoutfitness-video-train
 workoutfitness-video-val
 workoutfitness-video-test
 *.mp4
 *.avi
 *.mov
-data_split.py
 *.pth
