@@ -2,7 +2,7 @@ import torch
 import torchvision.models.video as models
 import torch.optim as optim
 from tqdm import tqdm
-from FitnessData import FitnessData
+from kaggle_data.FitnessData import FitnessData
 from torch.utils.data import DataLoader
 
 model = models.r2plus1d_18(pretrained=True)
