@@ -1,7 +1,6 @@
 workoutfitness-video/
 .DS_Store
 __pycache__
-*.pth
 *.pt
 *.png
 *.jpg
@@ -11,10 +10,6 @@ __pycache__
 kaggle_data/workoutfitness-video-train
 kaggle_data/workoutfitness-video-val
 kaggle_data/workoutfitness-video-test
-*.mp4
-*.avi
-*.mov
-*.pth
 penn_action/frames/*
 penn_action/frames_split/*
 penn_action/labels/*
@@ -22,3 +17,10 @@ penn_action/labels_split/*
 deeppose/__pycache__/*
 r2plus1d/r2plus1d_18_best.pth
 *.zip
+workoutfitness-video-train
+workoutfitness-video-val
+workoutfitness-video-test
+*.mp4
+*.avi
+*.mov
+*.pth

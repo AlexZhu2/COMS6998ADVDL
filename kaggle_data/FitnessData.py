@@ -71,10 +71,3 @@ class FitnessData(torch.utils.data.Dataset):
                 return torch.stack(frames).permute(1,0,2,3), label
             
             idx = np.random.randint(0, len(self))
-        
-        raise RuntimeError(f"Failed to load video after {attempts} attempts: {video_path}")
-    
-if __name__ == "__main__":
-    dataset = FitnessData(root_dir="kaggle_data/workoutfitness-video", train=True)
-    print(len(dataset))
-    print(dataset[0])
