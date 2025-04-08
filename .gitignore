@@ -18,6 +18,7 @@ kaggle_data/workoutfitness-video-test
 penn_action/frames/*
 penn_action/frames_split/*
 penn_action/labels/*
+penn_action/labels_split/*
 deeppose/__pycache__/*
 r2plus1d/r2plus1d_18_best.pth
 *.zip
