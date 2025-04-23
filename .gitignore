@@ -17,6 +17,8 @@ penn_action/labels_split/*
 deeppose/__pycache__/*
 r2plus1d/r2plus1d_18_best.pth
 *.zip
+mediapipe/processed_data/*
+mediapipe/checkpoints/*
 workoutfitness-video-train
 workoutfitness-video-val
 workoutfitness-video-test
@@ -24,3 +26,4 @@ workoutfitness-video-test
 *.avi
 *.mov
 *.pth
+COCO/annotations/

@@ -119,6 +119,7 @@ class PennActionFrameDataset(Dataset):
         
         # Normalize keypoints relative to the crop.
         keypoints_norm = np.empty_like(keypoints)
+        
         keypoints_norm[0] = (keypoints[0] - x1) / w
         keypoints_norm[1] = (keypoints[1] - y1) / h
         
